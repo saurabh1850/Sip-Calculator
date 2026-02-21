@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Inflation Adjusted Returns</h2>
+
+  <label>Maturity Value (₹):</label>
+  <input type="number" [(ngModel)]="maturity">
+
+  <label>Inflation Rate (%):</label>
+  <input type="number" [(ngModel)]="inflation">
+
+  <label>Years:</label>
+  <input type="number" [(ngModel)]="years">
+
+  <button (click)="calculate()">Calculate Real Value</button>
+
+  <div *ngIf="realValue">
+    <h3>Inflation Adjusted Value: ₹{{realValue}}</h3>
+    <h3>Loss of Purchasing Power: ₹{{maturity - realValue}}</h3>
+  </div>
+</div>

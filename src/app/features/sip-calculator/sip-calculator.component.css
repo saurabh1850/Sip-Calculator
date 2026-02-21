@@ -1,0 +1,152 @@
+/* Main Container */
+:host .container {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Title */
+:host .title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1a237e;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Labels */
+:host .container label {
+  display: block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #37474f;
+  font-size: 14px;
+}
+
+/* Inputs */
+:host .container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  transition: 0.3s ease;
+  outline: none;
+  background: #fafbff;
+}
+
+:host .container input:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 6px rgba(63, 81, 181, 0.2);
+  background: #ffffff;
+}
+
+/* Button */
+:host .calculate-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+:host .calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(63, 81, 181, 0.3);
+  background: linear-gradient(135deg, #303f9f, #3f51b5);
+}
+
+/* Result Card */
+:host .result-card {
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f5f7ff, #eef1ff);
+  border: 1px solid #e0e6ff;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Result Title */
+:host .result-title {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #283593;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+:host .result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Individual Result Boxes */
+:host .result-box {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  transition: 0.3s ease;
+  border-left: 5px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+:host .result-box:hover {
+  transform: scale(1.05);
+}
+
+/* Labels inside box */
+:host .result-box p {
+  margin: 0;
+  font-size: 13px;
+  color: #757575;
+  font-weight: 600;
+}
+
+/* Values */
+:host .result-box h4 {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+/* Color Themes */
+:host .invested {
+  border-left-color: #2196f3;
+}
+
+:host .returns {
+  border-left-color: #4caf50;
+}
+
+:host .maturity {
+  border-left-color: #ff9800;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

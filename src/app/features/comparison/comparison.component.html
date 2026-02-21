@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>SIP vs Lump Sum Comparison</h2>
+
+  <button (click)="compare()">Compare (Sample Data)</button>
+
+  <div *ngIf="sipResult && lumpResult">
+    <h3>SIP Invested: ₹{{sipResult.invested}}</h3>
+    <h3>SIP Maturity: ₹{{sipResult.maturity}}</h3>
+
+    <hr>
+
+    <h3>Lump Sum Invested: ₹{{lumpResult.invested}}</h3>
+    <h3>Lump Sum Maturity: ₹{{lumpResult.maturity}}</h3>
+
+    <hr>
+    <h3>Better Option: 
+      {{ sipResult.maturity > lumpResult.maturity ? 'SIP' : 'Lump Sum' }}
+    </h3>
+  </div>
+</div>

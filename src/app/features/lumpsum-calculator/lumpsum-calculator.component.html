@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Lump Sum Calculator</h2>
+
+  <label>One-time Investment (₹):</label>
+  <input type="number" [(ngModel)]="amount">
+
+  <label>Expected Return (%):</label>
+  <input type="number" [(ngModel)]="rate">
+
+  <label>Time Period (Years):</label>
+  <input type="number" [(ngModel)]="years">
+
+  <button (click)="calculate()">Calculate</button>
+
+  <div *ngIf="result">
+    <h3>Total Invested: ₹{{result.invested}}</h3>
+    <h3>Estimated Returns: ₹{{result.returns}}</h3>
+    <h3>Maturity Value: ₹{{result.maturity}}</h3>
+  </div>
+</div>

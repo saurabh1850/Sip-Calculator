@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="title">SIP Calculator</h2>
+
+  <label>Monthly Investment:</label>
+  <input type="number" min="1" [(ngModel)]="monthlyInvestment" placeholder="₹ 5000">
+
+  <label>Expected Return (%):</label>
+  <input type="number" min="1" [(ngModel)]="rate" placeholder="12">
+
+  <label>Duration (Years):</label>
+  <input type="number" min="1" [(ngModel)]="years" placeholder="10">
+
+  <label>Step-up SIP (% optional):</label>
+  <input type="number" min="0" [(ngModel)]="stepUp" placeholder="5">
+
+  <button class="calculate-btn" (click)="calculate()">Calculate</button>
+
+  <!-- Modern Result Card -->
+  <div *ngIf="result" class="result-card">
+    <h3 class="result-title">Investment Summary</h3>
+
+    <div class="result-grid">
+      <div class="result-box invested">
+        <p>Total Invested</p>
+        <h4>₹{{ result.invested | number:'1.0-0' }}</h4>
+      </div>
+
+      <div class="result-box returns">
+        <p>Estimated Returns</p>
+        <h4>₹{{ result.returns | number:'1.0-0' }}</h4>
+      </div>
+
+      <div class="result-box maturity">
+        <p>Maturity Value</p>
+        <h4>₹{{ result.maturity | number:'1.0-0' }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

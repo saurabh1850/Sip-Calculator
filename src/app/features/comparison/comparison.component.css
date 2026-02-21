@@ -1,0 +1,139 @@
+/* Component host wrapper (important for Angular encapsulation) */
+:host {
+  display: block;
+  padding: 20px 0;
+  background: #f4f6fb;
+  min-height: 100%;
+}
+
+/* Main Container Card */
+:host .container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 32px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Title */
+:host .container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1a237e;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* Compare Button */
+:host .container button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00897b, #26a69a);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button Hover */
+:host .container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 137, 123, 0.25);
+  background: linear-gradient(135deg, #00796b, #009688);
+}
+
+/* Result Section Box */
+:host .container div[ng-reflect-ng-if],
+:host .container div {
+  margin-top: 26px;
+  padding: 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f1f5ff, #f7f9ff);
+  border: 1px solid #e3e8ff;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Result Headings */
+:host .container h3 {
+  margin: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* SIP Section Highlight */
+:host .container h3:nth-child(1),
+:host .container h3:nth-child(2) {
+  color: #1565c0; /* Blue for SIP */
+}
+
+/* Lump Sum Section Highlight */
+:host .container h3:nth-child(4),
+:host .container h3:nth-child(5) {
+  color: #2e7d32; /* Green for Lump Sum */
+}
+
+/* Better Option Highlight (Last h3) */
+:host .container h3:last-child {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  background: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #c8e6c9;
+}
+
+/* Divider Styling */
+:host .container hr {
+  margin: 18px 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d1d9ff, transparent);
+}
+
+/* Smooth Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Lift Effect */
+:host .container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  :host .container {
+    margin: 20px 12px;
+    padding: 24px 18px;
+  }
+
+  :host .container h2 {
+    font-size: 20px;
+  }
+
+  :host .container h3 {
+    font-size: 15px;
+  }
+
+  :host .container button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
