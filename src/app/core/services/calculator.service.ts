@@ -79,4 +79,31 @@ export class CalculatorService {
       maturity: Math.max(0, Math.round(futureValue))
     };
   }
+  generateSipProjection(monthlyInvestment: number, rate: number) {
+  const durations = [
+    1, 2, 3, 4, 5, 8, 10, 12, 15, 18, 20,
+    21, 22, 23, 24, 25, 26, 27, 28, 29,
+    30, 32, 35
+  ];
+
+  const r = rate / 12 / 100;
+
+  return durations.map(year => {
+    const months = year * 12;
+
+    // Total SIP invested till that duration
+    const totalInvested = monthlyInvestment * months;
+
+    // SIP Future Value Formula (standard)
+    const futureValue =
+      monthlyInvestment *
+      (((Math.pow(1 + r, months) - 1) / r) * (1 + r));
+
+    return {
+      duration: year,
+      sipAmount: Math.round(totalInvested), // ✅ dynamic now
+      futureValue: Math.max(0, Math.round(futureValue))
+    };
+  });
+}
 }

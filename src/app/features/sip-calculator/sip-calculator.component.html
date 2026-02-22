@@ -37,3 +37,31 @@
     </div>
   </div>
 </div>
+
+<!-- 📊 Projection Table (Shows after Calculate) -->
+<div *ngIf="projectionData?.length" class="projection-card">
+  <h3 class="projection-title">
+    Projected SIP returns for various time durations. [ @{{rate}}% ]
+  </h3>
+
+  <div class="table-wrapper">
+    <table class="projection-table">
+      <thead>
+        <tr>
+          <th>Duration</th>
+          <th>SIP Amount (₹)</th>
+          <th>Future Value (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of projectionData">
+          <td>{{ item.duration }} years</td>
+          <td>₹{{ item.sipAmount | number:'1.0-0' }}</td>
+          <td class="future-value">
+            {{ formatIndian(item.futureValue) }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
