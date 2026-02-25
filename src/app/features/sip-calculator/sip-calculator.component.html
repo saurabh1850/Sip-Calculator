@@ -4,14 +4,17 @@
   <label>Monthly Investment:</label>
   <input type="number" min="1" [(ngModel)]="monthlyInvestment" placeholder="₹ 5000">
 
+  <label>Lumpsum Investment (Optional):</label>
+  <input type="number" min="0" [(ngModel)]="lumpsum" placeholder="₹ 100000">
+
   <label>Expected Return (%):</label>
   <input type="number" min="1" [(ngModel)]="rate" placeholder="12">
 
   <label>Duration (Years):</label>
   <input type="number" min="1" [(ngModel)]="years" placeholder="10">
 
-  <label>Step-up SIP (% optional):</label>
-  <input type="number" min="0" [(ngModel)]="stepUp" placeholder="5">
+  <!-- <label>Step-up SIP (% optional):</label>
+  <input type="number" min="0" [(ngModel)]="stepUp" placeholder="5"> -->
 
   <button class="calculate-btn" (click)="calculate()">Calculate</button>
 
